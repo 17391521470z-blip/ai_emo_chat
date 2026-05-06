@@ -1,8 +1,6 @@
 import { z } from "zod"
-import crypto from "node:crypto"
 import { NextResponse } from "next/server"
-import { getDb } from "@/lib/db"
-import { createSession, hashPassword, setSessionCookie } from "@/lib/auth"
+import { getSupabaseForRouteHandler } from "@/lib/auth"
 
 export const runtime = "nodejs"
 
@@ -19,25 +17,22 @@ export async function POST(request: Request) {
   }
 
   const { email, password } = parsed.data
-  const db = getDb()
+  const supabase = await getSupabaseForRouteHandler()
 
-  const existing = db
-    .prepare("select id from users where email = ? limit 1")
-    .get(email) as { id: string } | undefined
-  if (existing) {
-    return NextResponse.json({ ok: false, error: "该邮箱已注册" }, { status: 409 })
+  const { data, error } = await supabase.auth.signUp({ email, password })
+  if (error) {
+    const message = error.message || "注册失败，请稍后再试"
+    const status = message.includes("already") || message.includes("registered") ? 409 : 400
+    return NextResponse.json({ ok: false, error: message }, { status })
   }
 
-  const passwordHash = await hashPassword(password)
-  const id = crypto.randomUUID()
-  const now = Date.now()
+  const user = data.user
+  if (!user || !user.email) {
+    return NextResponse.json(
+      { ok: false, error: "注册失败，请稍后再试" },
+      { status: 500 },
+    )
+  }
 
-  db.prepare(
-    "insert into users (id, email, password_hash, created_at) values (?, ?, ?, ?)",
-  ).run(id, email, passwordHash, now)
-
-  const session = createSession(id)
-  await setSessionCookie(session.token, session.expiresAt)
-
-  return NextResponse.json({ ok: true, user: { id, email } })
+  return NextResponse.json({ ok: true, user: { id: user.id, email: user.email } })
 }
