@@ -26,25 +26,45 @@ export function getSystemPrompt() {
 export async function createChatCompletion(input: {
   messages: ChatMessage[]
 }) {
-  const apiKey = process.env.OPENAI_API_KEY
+  const apiKey = process.env.OPENAI_API_KEY || process.env.OPENROUTER_API_KEY
   if (!apiKey) {
-    throw new Error("缺少 OPENAI_API_KEY")
+    throw new Error("缺少 OPENAI_API_KEY 或 OPENROUTER_API_KEY")
   }
 
   const model = process.env.OPENAI_MODEL || "gpt-4o-mini"
   const url = `${getBaseUrl()}/chat/completions`
 
+  const headers: Record<string, string> = {
+    "Content-Type": "application/json",
+    Authorization: `Bearer ${apiKey}`,
+  }
+
+  const isOpenRouter = url.includes("openrouter.ai")
+  if (isOpenRouter) {
+    const referer = process.env.OPENROUTER_HTTP_REFERER
+    const title = process.env.OPENROUTER_APP_TITLE
+    if (referer) headers["HTTP-Referer"] = referer
+    if (title) headers["X-Title"] = title
+  }
+
+  const reasoningEnabled =
+    process.env.OPENAI_REASONING_ENABLED === "true" ||
+    process.env.OPENROUTER_REASONING_ENABLED === "true"
+
+  const body: Record<string, unknown> = {
+    model,
+    messages: input.messages,
+    temperature: 0.8,
+  }
+
+  if (reasoningEnabled) {
+    body.reasoning = { enabled: true }
+  }
+
   const res = await fetch(url, {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${apiKey}`,
-    },
-    body: JSON.stringify({
-      model,
-      messages: input.messages,
-      temperature: 0.8,
-    }),
+    headers,
+    body: JSON.stringify(body),
   })
 
   if (!res.ok) {

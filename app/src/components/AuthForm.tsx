@@ -28,6 +28,9 @@ export function AuthForm(props: { mode: Mode }) {
     return null
   }, [confirm, email, password, props.mode])
 
+  const inputClassName =
+    "h-14 w-full rounded-full bg-white px-6 text-base text-black/85 outline-none ring-1 ring-black/5 transition placeholder:text-black/35 focus:ring-2 focus:ring-black/15 dark:bg-white/10 dark:text-white/90 dark:ring-white/10 dark:placeholder:text-white/35 dark:focus:ring-white/20"
+
   async function onSubmit() {
     const reason = disabledReason
     if (reason) {
@@ -82,7 +85,7 @@ export function AuthForm(props: { mode: Mode }) {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="you@example.com"
               autoComplete="email"
-              className="h-12 rounded-2xl border border-[color:var(--border)] bg-white/70 px-4 text-sm text-black/80 outline-none transition focus:border-black/30 focus:bg-white dark:bg-white/10 dark:text-white/85 dark:focus:border-white/30"
+              className={inputClassName}
             />
           </label>
 
@@ -98,7 +101,7 @@ export function AuthForm(props: { mode: Mode }) {
               autoComplete={
                 props.mode === "register" ? "new-password" : "current-password"
               }
-              className="h-12 rounded-2xl border border-[color:var(--border)] bg-white/70 px-4 text-sm text-black/80 outline-none transition focus:border-black/30 focus:bg-white dark:bg-white/10 dark:text-white/85 dark:focus:border-white/30"
+              className={inputClassName}
             />
           </label>
 
@@ -113,7 +116,7 @@ export function AuthForm(props: { mode: Mode }) {
                 type="password"
                 placeholder="再输入一次密码"
                 autoComplete="new-password"
-                className="h-12 rounded-2xl border border-[color:var(--border)] bg-white/70 px-4 text-sm text-black/80 outline-none transition focus:border-black/30 focus:bg-white dark:bg-white/10 dark:text-white/85 dark:focus:border-white/30"
+                className={inputClassName}
               />
             </label>
           ) : null}
