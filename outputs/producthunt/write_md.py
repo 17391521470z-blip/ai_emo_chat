@@ -1,0 +1,46 @@
+import os
+
+filepath = "/workspace/outputs/producthunt/2026-06-05.md"
+
+content = """# 2026-06-05
+
+**简短总览**
+
+由于 Product Hunt 官方页面受到 Cloudflare 反爬虫策略的严格限制，今日的榜单数据通过第三方跟踪平台（Hunted.Space）获取。目前平台所展示的最新“今日热门”数据为 2026 年 6 月 4 日的产品榜单。
+
+当天的榜单涵盖了多款极具创新性的 AI 与开发者工具，从提升邮件送达率的营销利器，到赋能本地多模态运算的轻量级大模型，再到全自动的 AI 安全渗透测试代理，充分展现了 AI 技术在实际业务场景中的深度渗透与落地应用。
+
+**产品榜单**
+
+### 1. [Mailwarm 2.0](https://www.producthunt.com/products/mailwarm)
+**排名：** 1 | **票数：** 479
+**标语：** The email warmup tool, upgraded for deliverability.
+Mailwarm 2.0 是一款专注于提升电子邮件送达率的高级预热平台。它主要解决初创公司和企业在进行邮件营销时，邮件容易被判定为垃圾邮件而无法触达客户的痛点。该产品非常适合依赖邮件推动业务增长的创始人、销售团队和代理商使用。其核心卖点在于不仅提供自动化的邮件预热服务，还结合了真实用户互动、系统监控、基础设施检查以及专家的一对一指导。在实际使用场景中，用户可以利用它来修复受损的发件人声誉，或者在开启大规模冷邮件推广前确保基础设施健康。整体而言，它定位为全方位的邮件触达保障系统，帮助业务沟通变得更加顺畅可靠。
+
+### 2. [Astra Autonomous Pentest](https://www.producthunt.com/products/astra-security)
+**排名：** 2 | **票数：** 309
+**标语：** AI agents that find, validate, and fix every vulnerability
+Astra Autonomous Pentest 是一款旨在让软件“自我修复”成为新标准的自动化安全测试平台。它主要解决传统渗透测试效率低下、且难以快速给出可行修复方案的安全痛点。该产品非常适合现代软件开发团队和企业安全专家使用。其核心优势在于部署了一支 AI 驱动的漏洞猎人代理大军，能够发现复杂的链式漏洞，并通过独立验证层将误报率降至极低。在实际使用中，当发现安全漏洞时，它能直接生成适用于 Cursor、Copilot 等 AI 编程工具的修复提示，帮助开发者即时修复问题。整体定位是终结被动式安全测试时代，为企业提供主动防御与自动修复的一体化解决方案。
+
+### 3. [Empromptu AI](https://www.producthunt.com/products/empromptu)
+**排名：** 3 | **票数：** 252
+**标语：** Train Fine Tuned Models With AI Apps You're Already Building
+Empromptu AI 致力于帮助开发者将正在运行的 AI 应用转化为企业专属的自定义微调模型。它解决了目前大多数 AI 应用过度依赖第三方云端大模型，导致长期推理成本高昂且难以沉淀核心竞争力的痛点。这款工具非常适合希望降低 AI 运营成本、并逐步构建自有技术壁垒的 AI 开发者和技术团队。它的核心功能是在应用运行时，自动捕获真实用户的交互数据、人工修正信息和边缘案例，利用这些信号持续训练和优化自有模型。通过这种方式，团队可以在实际业务场景中不断提升模型的输出准确性，彻底摆脱对通用大模型的长期依赖。它被定位为一款推动开发者从“租用智能”向“拥有智能”进化的基础设施工具。
+
+### 4. [Google Gemma 4 12B](https://www.producthunt.com/products/gemma-4-12b)
+**排名：** 4 | **票数：** 227
+**标语：** Run multimodal AI locally with an encoder-free architecture
+Google Gemma 4 12B 是一款支持在本地设备上高效运行的原生多模态人工智能模型。它主要解决了开发者在构建多模态 AI 应用时，对云端 API 的深度依赖以及本地硬件算力门槛过高的痛点。该模型非常适合需要开发离线 AI 代理、注重数据隐私的开发者和研究人员使用。其核心卖点是采用了无编码器的创新架构，能够直接处理文本、视觉和音频信息，且只需 16GB 的显存即可流畅运行。在实际场景中，它可以被广泛应用于本地化智能助手、多媒体内容分析以及设备端的复杂任务处理。从其介绍可以看出，它被定位为一款轻量级、高可用的多模态开源利器。
+
+### 5. [Build Club Campus](https://www.producthunt.com/products/build-club)
+**排名：** 5 | **票数：** 176
+**标语：** Virtual AI School: Upskill in AI and Become Great at it Fast
+Build Club Campus 是一所游戏化且由社区驱动的免费虚拟 AI 学校，主张通过实际动手构建来掌握 AI 技术。它主要解决了传统静态 AI 课程更新速度太慢，无法跟上大模型和 AI 工具高频迭代步伐的痛点。该平台非常适合希望快速提升 AI 技能、赋能日常工作、创业或开展副业的各阶段学习者。其核心特色是摒弃了过时的理论教程，提供短小精悍的微课程、真实的项目实战以及随工具同步进化的社区模板，并涵盖了针对不同岗位的学习路径。用户可以在这里学习主流 AI 工具，与庞大的社区成员一起做项目，并获得官方认证证书。它明确定位于一个注重实操、终身免费的动态 AI学习社区。
+"""
+
+if os.path.exists(filepath):
+    with open(filepath, 'a', encoding='utf-8') as f:
+        f.write("\n\n**重复运行**\n")
+else:
+    with open(filepath, 'w', encoding='utf-8') as f:
+        f.write(content)

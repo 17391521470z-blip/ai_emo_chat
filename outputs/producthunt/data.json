@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Mailwarm 2.0",
+    "tagline": "The email warmup tool, upgraded for deliverability.",
+    "description": "Most founders rely on email to grow, but emails don’t land in the inbox by magic. Mailwarm 2.0 is the premium email warmup and deliverability system built to give your emails the best chance of reaching the inbox. It combines automated warmup, real engagement, monitoring, infrastructure checks, and experts call available for every subscriber.",
+    "url": "https://www.producthunt.com/products/mailwarm",
+    "votes": 479,
+    "rank": 1
+  },
+  {
+    "name": "Astra Autonomous Pentest",
+    "tagline": "AI agents that find, validate, and fix every vulnerability",
+    "description": "Astra Autonomous Pentesting makes self-healing software the new standard, a category we’re defining after 8 years and 5,000+ real-world pentests. An army of offensive pentesters and bounty hunter agents that discovers complex chained vulnerabilities, an independent validator layer drives false positives to near-zero, and AI-fix agents deliver remediation as native Cursor, Copilot, and Claude Code prompts. The reactive pentest era is over.",
+    "url": "https://www.producthunt.com/products/astra-security",
+    "votes": 309,
+    "rank": 2
+  },
+  {
+    "name": "Empromptu AI",
+    "tagline": "Train Fine Tuned Models With AI Apps You're Already Building",
+    "description": "Most AI apps launch on someone else’s model and stay there forever. Empromptu AI turns live AI features into custom models you own. As your app runs, Empromptu AI captures real-world usage, human corrections, and edge cases from live AI workflows, then uses that signal to train a custom model you own. Improve accuracy, lower inference costs, and stop depending forever on rented intelligence from the same providers moving into your category.",
+    "url": "https://www.producthunt.com/products/empromptu",
+    "votes": 252,
+    "rank": 3
+  },
+  {
+    "name": "Google Gemma 4 12B",
+    "tagline": "Run multimodal AI locally with an encoder-free architecture",
+    "description": "Gemma 4 12B processes text, vision, and audio natively without separate encoders, running on 16GB VRAM. For developers building local agentic applications who need multimodal capability without cloud dependency.",
+    "url": "https://www.producthunt.com/products/gemma-4-12b",
+    "votes": 227,
+    "rank": 4
+  },
+  {
+    "name": "Build Club Campus ",
+    "tagline": "Virtual AI School: Upskill in AI and Become Great at it Fast",
+    "description": "Build Club Campus is a fun, gamified and community-driven virtual AI school for learning AI by building with it. Static courses get old fast in AI, so Campus helps you stay current through bite-sized courses, real projects, role-based use cases and community templates that evolve with the tools. Earn certifications in OpenAI, Claude, Copilot and more, and become great at AI fast - for work, startups or side hustles. It’s 100% free, as part of our mission to enable anyone to build with AI.",
+    "url": "https://www.producthunt.com/products/build-club",
+    "votes": 176,
+    "rank": 5
+  }
+]
